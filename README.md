@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
 
-## Project info
+# SolWallet – A Solana Devnet Dashboard
 
-**URL**: https://lovable.dev/projects/ecb66f0a-08c5-4e26-a806-4ab5a9e2f604
+SolWallet is a modern, developer-focused web wallet for Solana, built with React, TypeScript, Tailwind CSS, and the Solana Wallet Adapter. It enables seamless interaction with the Solana Devnet: connect your wallet, request airdrops, send SOL, and sign messages – all in a user-friendly, decentralized interface.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## ✨ Features
 
-**Use Lovable**
+- **Connect to any Solana Wallet** via [Solana Wallet Adapter](https://github.com/solana-labs/wallet-adapter)
+- **Request Airdrops** of SOL on Devnet for easy testing
+- **Send SOL tokens** to any address
+- **View your Devnet SOL Balance** instantly
+- **Sign messages** with your wallet for on-chain/off-chain verification
+- **Responsive and beautiful UI** with Tailwind and shadcn/ui
+- **Built-in GitHub link** for transparency and open source spirit
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ecb66f0a-08c5-4e26-a806-4ab5a9e2f604) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tech Stack
 
-**Use your preferred IDE**
+- **[Solana Web3.js](https://solana-labs.github.io/solana-web3.js/):**
+  The official JavaScript API for Solana blockchain interaction, powering wallet connects, transaction signing, balance checks, and more.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **[Wallet Adapter](https://github.com/solana-labs/wallet-adapter):**
+  Unified plug-and-play React solution to connect a variety of Solana wallets, making onboarding fast and secure. Includes out-of-the-box UI components for wallet selection, connect, and disconnect.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **React + TypeScript:** Robust, component-based architecture.
+- **Tailwind CSS + shadcn/ui:** Modern, accessible, and responsive design system.
+- **lucide-react:** Beautiful SVG icon library.
+- **Vite:** Lightning-fast development environment.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+## 🌍 Decentralized Concepts
+
+SolWallet is **non-custodial** and **decentralized**:
+
+- All key management and signing are handled **inside your wallet** – your keys are never shared with the app or its server.
+- You interact directly with the **Solana Devnet** – nothing is centralized or hidden.
+- **Open Source:** [View the source on GitHub!](https://github.com/your-source-code-repository)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+
+- **Node.js** and **npm** (v16 or later recommended)
+- A supported Solana wallet (e.g. Phantom, Solflare, Backpack).
+
+### 2. Installation
+
+```bash
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Visit [http://localhost:5173](http://localhost:5173) (or as directed by Vite) to start using SolWallet!
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Connect a Wallet
 
-**Use GitHub Codespaces**
+1. Click **Connect Wallet** at the top right.
+2. Select your preferred wallet from the modal.
+3. Interact with Solana Devnet instantly!
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🧑‍💻 Project Structure
 
-This project is built with:
+- `src/pages/Index.tsx` – Main dashboard UI
+- `src/components/ShowSolBalance.tsx` – Displays connected wallet’s SOL balance
+- `src/components/Airdrop.tsx` – SOL faucet for Devnet testing
+- `src/components/SendTokens.tsx` – Transfer SOL to another address
+- `src/components/SignMessage.tsx` – Sign messages and copy signatures
+- **Styling:** Tailwind CSS, shadcn/ui, lucide-react icons
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🔐 About Solana Web3.js & Wallet Adapter
 
-Simply open [Lovable](https://lovable.dev/projects/ecb66f0a-08c5-4e26-a806-4ab5a9e2f604) and click on Share -> Publish.
+**solana/web3.js** exposes all functionality to:
 
-## Can I connect a custom domain to my Lovable project?
+- Connect to the Solana cluster (Devnet/Mainnet/Testnet)
+- Create and sign transactions (like transfers and message signing)
+- Fetch account info and SOL balances
 
-Yes, you can!
+**Wallet Adapter** provides wallet interoperability and security by abstracting the details of each wallet’s connection and signing API, letting you focus on building great dApps.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🛡️ Security
+
+- **Non-custodial:** Your private keys never leave your wallet.
+- All messages and transactions are reviewed and signed in your wallet extension or app.
+- No backend: all actions are direct client-to-blockchain.
+
+**Never share your private keys or secret recovery phrases!**
+
+---
+
+## 📝 Customization & Deployment
+
+- Easily theme with Tailwind classes or add more wallet adapters.
+- Deploy with [Lovable](https://lovable.dev) or any Vercel/Netlify/VPS using standard React build steps.
+- Connect your custom domain for production.
+
+---
+
+## 🙋 FAQ
+
+**Q: Is this mainnet-ready?**  
+A: SolWallet is designed for **Devnet** only! For mainnet use, update the network config and be aware of production risks.
+
+**Q: Can I add more wallets?**  
+A: Absolutely! Configure more wallets in the WalletProvider array in `Index.tsx`.
+
+---
+
+## ❤️ Credits
+
+- [Solana Labs](https://solana.com/)
+- [solana-labs/wallet-adapter](https://github.com/solana-labs/wallet-adapter)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [lucide-react](https://lucide.dev/)
+
+---
+
+## 📄 License
+
+MIT
+
